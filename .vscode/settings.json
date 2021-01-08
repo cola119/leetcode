@@ -1,6 +1,24 @@
 {
     "files.associations": {
         "*.html": "html",
-        "vector": "cpp"
+        "vector": "cpp",
+        "unordered_map": "cpp",
+        "__bit_reference": "cpp",
+        "__config": "cpp",
+        "__cxx_version": "cpp",
+        "__debug": "cpp",
+        "__hash_table": "cpp",
+        "__split_buffer": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "iterator": "cpp",
+        "hash_map": "cpp",
+        "functional": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "locale": "cpp",
+        "memory": "cpp",
+        "string": "cpp",
+        "string_view": "cpp"
     }
 }
