@@ -6,6 +6,11 @@
 
 2. add two numbers
    LinkList の操作
+
    1. current.next = new LinkList
    2. current = current.next
    3. current.val = 10
+
+3. reverse integer
+   Int の扱える値は -2^31 -- 2^31 -1
+   n bit の場合 -2^(n-1) -- 2^(n-1) - 1
