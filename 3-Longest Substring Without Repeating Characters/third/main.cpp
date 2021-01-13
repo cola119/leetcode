@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
-#include <unordered_set>
+#include <unordered_map>
 
-// comp: O(2n) = O(n)
-// space(set): O(min(n, m))
+// comp: O(n)
+// space(hashmap): O(min(m,n))
 class Solution
 {
 public:
@@ -14,25 +14,25 @@ public:
     int lengthOfLongestSubstring(std::string s)
     {
 
-        std::unordered_set<char> set;
-        int i, j, ans;
+        std::unordered_map<char, int> hash;
+        int ans = 0;
         int n = s.size();
-        i = j = ans = 0;
 
-        while (i < n && j < n)
+        for (int i = 0, j = 0; j < n; j++)
         {
-            if (set.find(s[j]) != set.end())
+            if (hash.find(s[j]) != hash.end())
             {
-                set.erase(s[i]);
-                i++;
+                // a bit more efficent compared to the second answer;
+                i = max(i, hash.find(s[j])->second + 1);
+                hash[s[j]] = j;
             }
             else
             {
-                set.insert(s[j]);
-                j++;
-                ans = max(ans, j - i);
+                hash.insert({s[j], j});
             }
+            ans = max(ans, j - i + 1);
         }
+
         return ans;
     }
 };
@@ -45,6 +45,7 @@ int main()
     assert(solver->lengthOfLongestSubstring("a") == 1);
     assert(solver->lengthOfLongestSubstring("av") == 2);
     assert(solver->lengthOfLongestSubstring("aa") == 1);
+    assert(solver->lengthOfLongestSubstring("abba") == 2);
     assert(solver->lengthOfLongestSubstring("aaaaa") == 1);
     assert(solver->lengthOfLongestSubstring("abv") == 3);
     assert(solver->lengthOfLongestSubstring("dvdf") == 3);

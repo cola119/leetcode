@@ -65,6 +65,8 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "stack": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "deque": "cpp",
+        "unordered_set": "cpp"
     }
 }
