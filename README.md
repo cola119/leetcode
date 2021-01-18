@@ -34,7 +34,12 @@
 
 9. palindrome-number
 
-   - first
+   - first O(log(x)), O(log(x))
      `10^i*a_i = x % 10^(i+1) - x_i_1`
      このとき、`i=n=8`のとき `10^(i+1)` がオーバーフローする。
      このように for で i 乗していくときはオーバーフローに注意
+
+     - a_i を配列でメモする必要なかった →a_i 求めて reverse integer にすればいい
+
+   - second O(log(x)), O(1)
+     reverse integer にした
