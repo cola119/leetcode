@@ -43,3 +43,14 @@
 
    - second O(log(x)), O(1)
      reverse integer にした
+
+10.
+
+11. container-with-most-water
+
+    - first: O(n\*h_max), space O(n)
+      brute force と変わらず非効率だった
+    - second
+      https://leetcode.com/problems/container-with-most-water/discuss/175274/Formal-proof-of-the-O(n)-algorithm
+      アルゴリズムの証明が必要
+      if()が仮定(assumption), 今回は if(assumption)の否定から矛盾 contradict を導く
